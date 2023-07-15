@@ -31,9 +31,11 @@ public class Game {
     @Column(columnDefinition = "TEXT")
     private String longDescription;
 
-    public Game() {}
+    public Game() {
+    }
 
-    public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl, String shortDescription, String longDescription) {
+    public Game(Long id, String title, Integer year, String genre, String platforms, Double score, String imgUrl,
+                String shortDescription, String longDescription) {
         this.id = id;
         this.title = title;
         this.year = year;
@@ -124,11 +126,13 @@ public class Game {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
         Game other = (Game) obj;
         return Objects.equals(id, other.id);
     }
-
-
 }

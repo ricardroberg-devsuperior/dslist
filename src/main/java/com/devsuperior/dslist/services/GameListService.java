@@ -38,8 +38,7 @@ public class GameListService {
         int max = sourceIndex < destinationIndex ? destinationIndex : sourceIndex;
 
         for (int i = min; i <= max; i++) {
-            gameListRepository.updateBelongingPosition(listId, list.get(i).getId(), null);
+            gameListRepository.updateBelongingPosition(listId, list.get(i).getId(), i);
         }
-
     }
 }
